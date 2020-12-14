@@ -1,0 +1,17 @@
+*Intrucciónes para instalar Portainer
+
+La instalación de Portainer es muy sencilla. Lo único que hay que hacer es crear un volumen, donde se almacenarán los datos, y iniciarlizar el contenedor.
+
+*Para crear el volumen se usa el siguiente código:
+
+docker volume create portainer_data
+
+*Una vez realizada esta tarea solo queda levantar el contenedor con el siguiente código:
+
+sudo docker run -d \
+--name portainer \
+--restart=always \
+-p 9000:9000 \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v portainer_data:/data portainer/portainer
+Básicamente le estamos diciendo a docker que cree un nuevo contenedor que se ejecute siempre, es decir, si la Raspberry se apaga el contenedor se levantará solo. Además, también le indicamos que para acceder a la web app vamos a usar el puerto 9000 y por último le indicamos donde se encuentra el volumen creado anteriormente.
