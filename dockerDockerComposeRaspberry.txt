@@ -1,0 +1,13 @@
+*Install Docker via curl
+
+curl -sSL https://get.docker.com | sh
+*Add permission to Pi User to run Docker Commands
+sudo usermod -aG docker pi
+*Checking Docker installation
+docker run hello-world
+*Installing dependencies
+sudo apt-get install libffi-dev libssl-dev
+sudo apt install python3-dev
+sudo apt-get install -y python3 python3-pip
+*Install Docker Compose
+sudo pip3 install docker-compose
