@@ -1,0 +1,22 @@
+# gkachele
+Im new in this world but continous learning and sharing information.
+
+Install rsnapshot
+$ sudo apt-get install rsnapshot
+
+Configurate rsnapshot editing the file --> /etc/rsanpshot.conf
+ $ sudo nano /etc/rsnapshot.conf
+
+To check the right  configuration of rsnapshot:
+
+$ sudo rsnapshot configtest
+Syntax OK
+
+
+we can check if the sintaxys works fine.
+
+$ sudo rsnapshot daily
+
+(we can find de backup in the folliwing route.)
+
+root@raspberrypi:/# cd snapshots/
